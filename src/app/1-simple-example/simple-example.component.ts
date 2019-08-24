@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleExampleComponent implements OnInit {
 
+  public showSimpleInput = false;
+  public showSimpleButton = false;
+
   public constructor() { }
 
   public ngOnInit() {

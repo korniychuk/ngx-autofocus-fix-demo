@@ -1,3 +1,21 @@
-<app-section name="The simplest example">
-  Test content
+<app-section name="Toggleable controls">
+
+  <p>
+    <button class="simple-button" (click)="showSimpleInput = !showSimpleInput">Toggle Input</button>
+
+    <input class="simple-input"
+           autofocus
+           placeholder="I have autofocus"
+           *ngIf="showSimpleInput"
+    >
+  </p>
+  <p>
+    <button class="simple-button" (click)="showSimpleButton = !showSimpleButton">Toggle Button</button>
+
+    <button class="simple-button"
+           autofocus
+           *ngIf="showSimpleButton"
+    >I have autofocus</button>
+  </p>
+
 </app-section>

@@ -9,3 +9,24 @@ html {
 
   color: #fff;
 }
+
+.simple-button {
+  cursor: pointer;
+}
+
+.simple-button,
+.simple-input {
+  font-size: 1.2em;
+  border-radius: 0.3em;
+}
+.simple-input {
+  /*max-width: 75px;*/
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+.simple-input::placeholder {
+  color: #eee;
+}
