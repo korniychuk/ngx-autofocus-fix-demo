@@ -19,7 +19,8 @@ nav ul li {
 nav ul li a {
     padding: 18px;
     text-transform: uppercase;
-    color: rgba(0, 35, 122, 0.5);
+    /*color: rgba(0, 35, 122, 0.5);*/
+    color: #fff;
     font-size: 18px;
     text-decoration: none;
     display: block;

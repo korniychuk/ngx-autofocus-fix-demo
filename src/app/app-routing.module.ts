@@ -22,6 +22,11 @@ const routes: Routes = [
     path: '5-infinite-scroll',
     loadChildren: './5-infinite-scroll/infinite-scroll.module#InfiniteScrollModule',
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '1-simple-example',
+  }
 ];
 
 @NgModule({
