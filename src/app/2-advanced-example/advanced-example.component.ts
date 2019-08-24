@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-advanced-example',
   templateUrl: './advanced-example.component.html',
-  styleUrls: ['./advanced-example.component.css']
+  styleUrls: ['./advanced-example.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdvancedExampleComponent {
 

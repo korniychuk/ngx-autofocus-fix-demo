@@ -1,16 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Subject, Observable, interval } from 'rxjs';
-import * as $ from 'rxjs/operators';
+import { Subject, Observable } from 'rxjs';
 
-const createArrayOfValuesByInterval = (delay = 500) => (o: Observable<any>): Observable<number[]> => o.pipe(
-  $.switchMap(() =>
-    interval(delay).pipe(
-      $.take(5),
-      $.scan((acc: number[], i: number) => (acc.push(i), acc), []),
-      $.startWith([]),
-    ),
-  ),
-);
+import { createArrayOfValuesByInterval } from '../rx-operators';
 
 @Component({
   selector: 'app-simple-example',

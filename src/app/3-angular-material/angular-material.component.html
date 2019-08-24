@@ -1,3 +1,74 @@
-<p>
-  angular-material works!
-</p>
+<app-section name="Angular Material :: Toggleable controls">
+  <p>For the simple usage no need to enable .triggerDetectChanges option</p>
+
+  <form>
+    <p>
+      <button class="simple-button" (click)="showSimpleInput = !showSimpleInput">Toggle Input</button>
+
+      <mat-form-field *ngIf="showSimpleInput">
+        <input matInput
+               autofocus
+               placeholder="I have autofocus"
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <button class="simple-button" (click)="showSimpleButton = !showSimpleButton">Toggle Button</button>
+
+      <button mat-raised-button
+              color="primary"
+              autofocus
+              *ngIf="showSimpleButton"
+      >I have autofocus</button>
+    </p>
+  </form>
+
+</app-section>
+<app-section name="Angular Material :: Inserting 5 Inputs by timer" class="by-timer">
+  <p>Only even controls have enabled autofocus</p>
+
+  <app-section name="ChangeDetectionStrategy.Default">
+    <h4>Without .triggerChangeDetection:</h4>
+    <ul>
+      <li>You will see the error in the debug console: ExpressionChangedAfterItHasBeenCheckedError</li>
+      <li>Focus losing works not properly</li>
+    </ul>
+
+    <app-mat-input-timer></app-mat-input-timer>
+  </app-section>
+  <app-section name="ChangeDetectionStrategy.OnPush">
+    <h4>Without .triggerChangeDetection:</h4>
+    <ul>
+      <li>There is no the error in the console</li>
+      <li>However, focus losing still works not properly</li>    </ul>
+
+    <app-mat-input-timer-on-push></app-mat-input-timer-on-push>
+  </app-section>
+
+  <p><strong>Summary:</strong>
+    Independent of ChangeDetectionStrategy you should enable .triggerChangeDetection to work with
+    some components from Angular Material that have wrappers like
+    &lt;mat-form-field&gt;...&lt;/mat-form-field&gt;
+  </p>
+</app-section>
+
+<app-section name="Angular Material :: Inserting 5 Buttons by timer" class="by-timer">
+  <ul>
+    <li>Only even controls have enabled autofocus</li>
+    <li>Works properly without .triggerChangeDetection because have not wrappers like
+      &lt;mat-form-field&gt;...&lt;/mat-form-field&gt;
+    </li>
+  </ul>
+
+
+  <p>
+    <button class="simple-button" (click)="insertButtons()">Insert Buttons</button>
+
+    <button mat-raised-button
+            *ngFor="let v of buttons$ | async"
+            [autofocus]="haveAutofocus(v)"
+            [title]="getLabel(v)"
+    >{{ v }}</button>
+  </p>
+
+</app-section>

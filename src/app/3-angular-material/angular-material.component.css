@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+.simple-button {
+    margin-right: 1em;
+}
+
+h4 {
+    margin-bottom: 0;
+}

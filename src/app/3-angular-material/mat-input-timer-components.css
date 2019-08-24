@@ -1,0 +1,11 @@
+:host ::ng-deep .mat-form-field-infix {
+    width: 30px;
+}
+
+mat-form-field {
+    margin-left: 1em !important;
+}
+
+input[matInput]:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}

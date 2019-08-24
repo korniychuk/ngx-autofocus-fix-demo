@@ -46,6 +46,16 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
         border-style: inset;
         border-width: 1px;
     }
+    :host-context(app-section) :host .__body {
+        border-left: 1px dashed #fff;
+        padding-left: 1em;
+    }
+    :host-context(app-section) :host {
+        padding-left: 2em;
+    }
+    :host-context(app-section) :host .__name {
+        font-size: 1em;
+    }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

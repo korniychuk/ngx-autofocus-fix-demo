@@ -1,0 +1,26 @@
+<p>
+  Without .triggerDetectChanges:
+  <button class="simple-button" (click)="insertInputs()">Insert Inputs</button>
+
+  <mat-form-field *ngFor="let v of inputs$ | async">
+    <input matInput
+           [autofocus]="haveAutofocus(v)"
+           [title]="getLabel(v)"
+           [value]="v"
+    >
+  </mat-form-field>
+</p>
+
+<p>
+  With .triggerDetectChanges:
+  <button class="simple-button" (click)="insertInputs2()">Insert Inputs</button>
+
+  <mat-form-field *ngFor="let v of inputs2$ | async">
+    <input matInput
+           autofocusFixTriggerDetectChanges
+           [autofocus]="haveAutofocus(v)"
+           [title]="getLabel(v)"
+           [value]="v"
+    >
+  </mat-form-field>
+</p>
