@@ -21,6 +21,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "npm run lint -- --fix",
     "e2e": "ng e2e"
   },
   "devDependencies": {
@@ -28,10 +29,10 @@
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "~4.5.0",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~5.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
@@ -41,7 +42,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
+    "tslint": "~5.19.0",
     "typescript": "~3.1.1"
   }
 }

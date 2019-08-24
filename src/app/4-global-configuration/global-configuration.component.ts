@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GlobalConfigurationComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
