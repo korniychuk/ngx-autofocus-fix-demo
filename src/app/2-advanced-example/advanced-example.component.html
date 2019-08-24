@@ -1,3 +1,70 @@
-<p>
-  advanced-example works!
-</p>
+<app-section name="Play with different values of the input parameters">
+
+  <div class="play">
+    <div class="left">
+      <h3>@Input('autofocus') === <span>{{ (autofocusValue | json) || 'undefined' }}</span></h3>
+
+      <h5>Values to disable autofocus:</h5>
+      <div class="to-disable">
+        <ul>
+          <li *ngFor="let v of values.disable.raw">
+            <label><input type="radio" name="value" [(ngModel)]="autofocusValue" [value]="v">
+              <pre>{{ (v | json) || 'undefined' }}</pre>
+            </label>
+          </li>
+        </ul>
+        <ul>
+          <li *ngFor="let v of values.disable.string">
+            <label><input type="radio" name="value" [(ngModel)]="autofocusValue" [value]="v">
+              <pre>{{ v | json }}</pre>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <h5>Values to enable autofocus:</h5>
+      <ul>
+        <li *ngFor="let v of values.enable">
+          <label><input type="radio" name="value" [(ngModel)]="autofocusValue" [value]="v">
+            <pre>{{ v | json }}</pre>
+          </label>
+        </li>
+      </ul>
+
+      <h5>Smart values:</h5>
+      <ul>
+        <li *ngFor="let v of values.smart">
+          <label><input type="radio" name="value" [(ngModel)]="autofocusValue" [value]="v">
+            <pre>{{ v | json }}</pre>
+          </label>
+        </li>
+      </ul>
+
+      <h3>@Input('autofocusFixSmartEmptyCheck') ===
+        <span class="smart-value">{{ (autofocusFixSmartEmptyCheckValue | json) || 'undefined' }}</span>
+      </h3>
+
+      <p><label><input type="checkbox" [(ngModel)]="autofocusFixSmartEmptyCheckValue"
+      > Enable</label></p>
+    </div>
+
+    <div class="right">
+      <p>
+        Just select options in the left panel and click 'Toggle Input' button.<br>
+        You can see is autofocus appears or not on each input creation
+      </p>
+
+      <button class="simple-button" (click)="showInput = !showInput">Toggle Input</button>
+
+      <input type="text"
+             class="simple-input"
+             *ngIf="showInput"
+             [autofocus]="autofocusValue"
+             [autofocusFixSmartEmptyCheck]="autofocusFixSmartEmptyCheckValue"
+             placeholder="Enter value ..."
+      >
+    </div>
+
+  </div>
+
+</app-section>

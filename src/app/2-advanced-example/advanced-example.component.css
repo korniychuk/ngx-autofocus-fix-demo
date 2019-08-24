@@ -1,0 +1,48 @@
+:host {
+    display: block;
+}
+pre {
+    display: inline-block;
+    margin: 0;
+}
+
+input[type=radio] {
+    margin-right: 1em;
+}
+
+ul {
+    margin-top: 0;
+    list-style: none;
+    /*margin: 0;*/
+    /*padding: 0;*/
+}
+
+h5 {
+    margin-bottom: 5px;
+}
+
+.to-disable {
+    display: flex;
+}
+
+.play {
+    margin-top: 1em;
+    display: flex;
+}
+
+.left {
+    padding-right: 1em;
+    border-right: 1px dashed #fff;
+}
+.right {
+    padding-left: 1em;
+}
+
+.simple-input {
+    margin-left: 1em;
+}
+
+.smart-value {
+    display: inline-block;
+    width: 45px;
+}

@@ -11,11 +11,19 @@ import { SimpleExampleComponent } from './simple-example.component';
 @NgModule({
   imports: [
     CommonModule,
-    AutofocusFixModule.forRoot(),
-    SharedModule,
     RouterModule.forChild([
       { path: '', component: SimpleExampleComponent },
     ]),
+
+    /**
+     * Warning!
+     * I provide module with .forRoot() call to non-root module because of this module imported via lazy-load.
+     * This is important because lazy-load modules encapsulates it providers.
+     * As the result we will not have any providers or directives of `AutofocusFixModule` out of this module.
+     */
+    AutofocusFixModule.forRoot(),
+
+    SharedModule,
   ],
   declarations: [SimpleExampleComponent]
 })
