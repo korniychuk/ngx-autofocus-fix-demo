@@ -19,3 +19,29 @@
   </p>
 
 </app-section>
+
+<app-section name="Inserting 5 controls by timer" class="by-timer">
+
+  <p>Only even controls have enabled autofocus</p>
+
+  <p>
+    <button class="simple-button" (click)="insertInputs()">Insert Inputs</button>
+
+    <input class="simple-input"
+           *ngFor="let v of inputs$ | async"
+           [autofocus]="haveAutofocus(v)"
+           [title]="getLabel(v)"
+           [value]="v"
+    >
+  </p>
+  <p>
+    <button class="simple-button" (click)="insertButtons()">Insert Buttons</button>
+
+    <button class="simple-button"
+            *ngFor="let v of buttons$ | async"
+            [autofocus]="haveAutofocus(v)"
+            [title]="getLabel(v)"
+    >Button {{ v }}</button>
+  </p>
+
+</app-section>

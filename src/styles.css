@@ -16,8 +16,12 @@ html {
 
 .simple-button,
 .simple-input {
-  font-size: 1.2em;
+  font-size: 1.1em;
   border-radius: 0.3em;
+}
+.simple-button:focus,
+.simple-input:focus {
+  outline-color: #fff;
 }
 .simple-input {
   /*max-width: 75px;*/

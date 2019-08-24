@@ -11,19 +11,28 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
     </div>
   `,
   styles: [`
+    :host {
+        margin-top: 40px;
+        display: block;
+    }
     .__name {
         padding: 0 20px;
-    }
-    :host {
-        display: block;
+        font-size: 1.5em;
     }
     .__header {
         display: flex;
         align-items: center;
     }
-    .__header:before,
+
+    .__header:before {
+        width: 70px;
+        flex: 0 1 auto;
+    }
     .__header:after {
         flex: 1 1 auto;
+    }
+    .__header:before,
+    .__header:after {
         height: 0;
         content: '';
 
