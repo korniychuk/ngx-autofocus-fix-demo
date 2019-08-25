@@ -9,6 +9,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
     <div class="__body">
       <ng-content></ng-content>
     </div>
+    <hr *ngIf="hasBottomBorder">
   `,
   styles: [`
     :host {
@@ -64,4 +65,6 @@ export class SectionComponent {
   @Input()
   public name?: string;
 
+  @Input()
+  public hasBottomBorder?: boolean | '';
 }

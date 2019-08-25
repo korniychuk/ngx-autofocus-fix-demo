@@ -15,14 +15,6 @@ const routes: Routes = [
     loadChildren: './3-angular-material/angular-material.module#AngularMaterialModule',
   },
   {
-    path: '4-global-configuration',
-    loadChildren: './4-global-configuration/global-configuration.module#GlobalConfigurationModule',
-  },
-  {
-    path: '5-infinite-scroll',
-    loadChildren: './5-infinite-scroll/infinite-scroll.module#InfiniteScrollModule',
-  },
-  {
     path: '',
     pathMatch: 'full',
     redirectTo: '1-simple-example',
